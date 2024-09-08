@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Stock Price Prediction</h1>
+    <form method="POST">
+        <label for="symbol">Stock Symbol:</label>
+        <input type="text" id="symbol" name="symbol" required>
+        
+        <label for="model_type">Model Type:</label>
+        <select id="model_type" name="model_type">
+            <option value="lstm">LSTM</option>
+            <option value="random_forest">Random Forest</option>
+            <option value="svm">SVM</option>
+        </select>
+        
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

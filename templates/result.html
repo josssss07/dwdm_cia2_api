@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Prediction Results for {{ symbol }}</h1>
+    <div class="result">
+        <p>Last Price: ${{ "%.2f"|format(last_price) }}</p>
+        <p>Predicted Price: ${{ "%.2f"|format(prediction) }}</p>
+        <p class="signal {{ signal.lower() }}">Signal: {{ signal }}</p>
+        <p class="sentiment">Sentiment: {{ sentiment }} ({{ "%.2f"|format(sentiment_score) }})</p>
+        <img src="data:image/png;base64,{{ chart_url }}" alt="Stock Price Chart">
+    </div>
+    <a href="/" class="back-link">Back to Prediction</a>
+</body>
+</html>
